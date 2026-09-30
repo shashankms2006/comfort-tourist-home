@@ -1,22 +1,14 @@
 import type { NextConfig } from "next";
 
-const repositoryName = "comfort-tourist-home";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: process.env.GITHUB_ACTIONS ? `/${repositoryName}` : "",
+  basePath,
   images: {
     unoptimized: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "plus.unsplash.com",
-      },
-    ],
+    loader: "custom",
+    loaderFile: "./image-loader.ts",
   },
 };
 
