@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-forest: #0D211B;
+    --color-forest-hover: #132f27;
+    --color-ivory: #F7F4EC;
+    --color-card: #FFFFFF;
+    --color-charcoal: #18201D;
+    --color-muted: #52605B;
+    --color-gold: #C89F52;
+    --color-gold-hover: #b48d42;
+    --color-whatsapp: #25D366;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-charcoal);
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Nature background utility — use on section wrappers */
+.section-nature-bg {
+  position: relative;
+  overflow: hidden;
+}
+.section-nature-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/gallery/AHRPTWkynrSvVsno9RbPmil_d2v_beD2WvvFGJOCqifh_hzJODZDdNWWrbJa26Jhg85A-S9geDjZmNknhE7e4c8ESkjjvpDhzai_hbV3s_CaG2JSgCjFHin51MYJNqeQU-vmSLTtBNQH4Aw4000-h3000-k-no.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  z-index: 0;
+  pointer-events: none;
+}
+.section-nature-bg > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F4EC;
+}
+::-webkit-scrollbar-thumb {
+  background: #0D211B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C89F52;
+}
+
+/* Min touch target for accessible mobile controls */
+.min-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
