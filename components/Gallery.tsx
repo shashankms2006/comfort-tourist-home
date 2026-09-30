@@ -194,10 +194,12 @@ export default function Gallery() {
             className="relative max-w-5xl w-full max-h-[88vh] flex flex-col items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={galleryImages[activeIndex].src}
               alt={galleryImages[activeIndex].alt}
-              className="max-w-full max-h-[82vh] object-contain rounded-xl shadow-2xl"
+              width={1600}
+              height={1200}
+              className="max-w-full max-h-[82vh] w-auto object-contain rounded-xl shadow-2xl"
             />
             {/* Counter */}
             <div className="mt-4 text-stone-500 text-xs font-mono tracking-widest">
